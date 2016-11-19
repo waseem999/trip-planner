@@ -6,43 +6,58 @@
 
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-items">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">wikistack</a>
-        </div>
         <div id="nav-items" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/wiki/">index</a></li>
-            <li><a href="/wiki/add">write</a></li>
-            <li><a href="/users">users</a></li>
-            <li><a href="/search">tagsearch</a></li>
-            <li><a href="/about">about</a></li>
+            <li><a href="/wiki/">Trip Planner</a></li>
+            <li><a href="/wiki/add">Home</a></li>
+            <li><a href="/users">About</a></li>
+            <li><a href="/search">Contact</a></li>
           </ul>
         </div>
       </div>
     </div>
-<div class="selector_box">
-<select class="hotel_selector">
-          {% for hotel in hotels %}
-          <option value = "{{ hotel.name }}">{{ hotel.name }}</option>
-          {% endfor %}
-      </select>
-        <select>
-          {% for restaurant in restaurants %}
-          <option value = "{{ restaurant.name }}">{{ restaurant.name }}</option>
-          {% endfor %}
-      </select>
-       <select>
-          {% for activity in activities %}
-          <option value = "{{ activity.name }}">{{ activity.name }}</option>
-          {% endfor %}
-      </select>
-</div>
+<div id="map-canvas" class="col-lg-8">Google Maps</div>
+      <div class="col-lg-4">
+        <div class="selector_box">
+          <div>Hotels</div>
+            <select class= "selector">
+                {% for hotel in hotels %}
+                <option value = "{{ hotel.name }}">{{ hotel.name }}</option>
+                {% endfor %}
+            </select>
+          <button class="btn btn-info select_buttons">+</button>
+          <div>Restaurants</div>
+            <select class="selector">
+              {% for restaurant in restaurants %}
+              <option value = "{{ restaurant.name }}">{{ restaurant.name }}</option>
+              {% endfor %}
+          </select>
+          <button class="btn btn-info select_buttons">+</button>
+          <div>Activities</div>
+          <select class="selector">
+              {% for activity in activities %}
+              <option value = "{{ activity.name }}">{{ activity.name }}</option>
+              {% endfor %}
+          </select>
+          <button class="btn btn-info select_buttons">+</button>
+    </div>
+    <div class="day_num">
+      <span class="days">Day 2</span>
+      <button class="btn btn-danger">x</button>
+    </div>
+      
+    <div class="details">
+      <ul class="button_list clearfix">
+        <li><button class="btn btn-info day_buttons">1</button></li>
+        <li><button class="btn btn-info day_buttons">2</button></li>
+        <li><button class="btn btn-info day_buttons">3</button></li>
+        <li><button class="btn btn-info day_buttons">+</button></li>
+      </ul>
+      <div class="day_labels">My Hotel</div>
+      <div class="day_labels">My Restaurants</div>
+      <div class="day_labels">My Activities</div>
+    </div>
+  </div>
 <div id="app" class="clearfix">
  
 </div>

@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 
 app.use("/bootstrap", express.static(__dirname + "/node_modules/bootstrap/dist"));
 app.use("/jquery", express.static(__dirname + "/node_modules/jquery/dist"));
+app.use(express.static("public"));
 
 
 // app.use(function (err, req, res, next) {
